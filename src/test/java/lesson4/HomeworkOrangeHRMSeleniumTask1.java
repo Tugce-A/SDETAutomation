@@ -15,7 +15,7 @@ public class HomeworkOrangeHRMSeleniumTask1 {
         //options.addArguments("--start-maximized");
 
         // Initialize WebDriver
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver=new ChromeDriver();
         // Configure browser to maximized
         driver.manage().window().maximize();
 
@@ -28,6 +28,8 @@ public class HomeworkOrangeHRMSeleniumTask1 {
         // Locate and enter Username
         WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
         username.sendKeys("Admin");
+
+        driver.manage().window().fullscreen();
 
         // Locate and enter Password
         WebElement password = driver.findElement(By.name("password"));
