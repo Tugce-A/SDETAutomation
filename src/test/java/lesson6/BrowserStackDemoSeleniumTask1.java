@@ -160,6 +160,6 @@ public class BrowserStackDemoSeleniumTask1 {
         } else {
             System.out.println("Logout Failed");
         }
-        driver.quit();
+        //driver.quit();
     }
 }
