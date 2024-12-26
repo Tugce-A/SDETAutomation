@@ -1,9 +1,6 @@
 package lesson9;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -44,7 +41,7 @@ public class RadioButtonExampleDemoQA {
         //WebElement radio1 = explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[contains(text(),'Yes')]")));
         WebElement radio1_2 = driver.findElement(By.id("yesRadio"));
         WebElement radio1 = driver.findElement(By.xpath("//label[contains(text(),'Yes')]"));
-        radio1.click();
+        //radio1.click();
 
         // Check if the "Yes" radio button is enabled and print the result
         if (!radio1.isEnabled()) {
@@ -54,22 +51,30 @@ public class RadioButtonExampleDemoQA {
         }
 
 
-        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio1);
 
         // Locate radio button 3, the "No" option, using its label text and ID
         WebElement radio3 = driver.findElement(By.xpath("//label[contains(text(),'No')]"));
         WebElement radio3_2 = driver.findElement(By.id("noRadio"));
 
         // Check if the "No" radio button is enabled and handle accordingly
-        if (!radio3_2.isEnabled()) {
-            System.out.println("'No' radio button is not clickable.");
-            //((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio3_2);
-            radio3.click(); // Attempt to click "No" radio button
 
-        } else {
-            System.out.println("'No' radio button is clickable.");
+
+        try {
+            if (!radio3_2.isEnabled()) {
+                System.out.println("'No' radio button is not clickable.");
+                Object result = ((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio3_2);
+                System.out.println("JavaScript sonucu: " + result);
+                //((JavascriptExecutor) driver).executeScript("arguments[0].click();", radio3_2);
+            }
+            else {
+                System.out.println("'No' radio button is clickable.");
+
+            }
+        } catch (ElementNotInteractableException e) {
+            throw new RuntimeException(e);
+        }
 
         }
 
     }
-}
