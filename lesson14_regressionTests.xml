@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionBanking">
+    <test name="BankingPriorityHigh">
+        <classes>
+            <class name="lesson14.TestNG_InvocationCountRepeatableTest"/>
+            <class name="lesson14.TestNG_Enabled_false"/>
+            <class name="lesson14.TestNG_DependsOnMethods"/>
+        </classes>
+    </test>
+    
+</suite>
