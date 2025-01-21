@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- The DOCTYPE declaration specifies the TestNG XML file type -->
+
+<suite name="Banking">
+    <!-- Defines a TestNG suite named "Banking" -->
+
+    <test name="BankingPriorityHigh">
+        <!-- Defines a test within the suite named "BankingPriorityHigh" -->
+
+        <groups>
+            <!-- Specifies groups of test methods to include or exclude during execution -->
+            <run>
+                <include name="regression"> </include>
+                <!-- Includes all test methods marked with the "regression" group -->
+
+                <exclude name="homePage"/>
+                <!-- Excludes all test methods marked with the "homePage" group -->
+
+                <include name="Subpages"/>
+                <!-- Includes all test methods marked with the "Subpages" group -->
+            </run>
+        </groups>
+
+        <classes>
+            <!-- Defines the classes that contain the test methods to execute -->
+            <class name="lesson15.GroupsExamples"> </class>
+            <!-- Specifies the fully qualified class name of the test class -->
+        </classes>
+    </test>
+</suite>

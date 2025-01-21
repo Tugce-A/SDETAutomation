@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- This is the TestNG suite configuration file -->
+<suite name="Regression" parallel="tests" thread-count="2">
+    <!-- Specify the suite name as "Regression" and configure parallel execution at the test level with 2 threads -->
+
+    <listeners>
+        <!-- Listeners for customizing reporting and logging -->
+        <listener class-name="org.testng.reporters.EmailableReporter2"/>
+        <!-- Generates an email-friendly test report -->
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+        <!-- Generates an XML test report -->
+        <listener class-name="org.testng.reporters.TestHTMLReporter"/>
+        <!-- Generates an HTML test report -->
+    </listeners>
+
+    <test name="Tests on Edge">
+        <!-- Define a test named "Tests on Edge" -->
+        <parameter name="browser" value="edge"/>
+        <!-- Set the "browser" parameter to "edge" -->
+        <classes>
+            <class name="lesson15.ParallelTests"> </class>
+            <!-- Specify the test class to execute: "lesson15.ParallelTests" -->
+        </classes>
+    </test>
+
+    <test name="Tests on Chrome">
+        <!-- Define a test named "Tests on Chrome" -->
+        <parameter name="browser" value="chrome"></parameter>
+        <!-- Set the "browser" parameter to "chrome" -->
+        <classes>
+            <class name="lesson15.ParallelTests"> </class>
+            <!-- Specify the test class to execute: "lesson15.ParallelTests" -->
+        </classes>
+    </test>
+
+</suite>

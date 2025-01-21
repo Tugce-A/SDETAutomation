@@ -1,11 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Define a TestNG suite named 'RegressionBanking' -->
 <suite name="RegressionBanking">
+
+    <!-- Define a test named 'BankingPriorityHigh' -->
     <test name="BankingPriorityHigh">
+
+        <!-- Specify the test classes to be executed -->
         <classes>
+
+            <!-- Test class containing repeatable test methods using InvocationCount -->
             <class name="lesson14.TestNG_InvocationCountRepeatableTest"/>
+
+            <!-- Test class with disabled test methods (enabled=false) -->
             <class name="lesson14.TestNG_Enabled_false"/>
+
+            <!-- Test class with methods dependent on other methods -->
             <class name="lesson14.TestNG_DependsOnMethods"/>
+
+            <!-- Base test class containing common setup and teardown logic -->
+            <class name="lesson15.BaseTest"/>
+
         </classes>
+
     </test>
-    
+
 </suite>

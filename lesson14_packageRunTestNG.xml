@@ -1,9 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Examples">
+
+<!-- Define a TestNG suite named 'Regression' -->
+<suite name="Regression">
+
+    <!-- Define a test named 'Basic Practical Tests' -->
     <test name="Basic Practical Tests">
-<packages>
-    <package name="lesson14"/>
-</packages>
+
+        <!-- Specify the package(s) containing the test classes to be executed -->
+        <packages>
+            <!-- Package name that contains the test classes -->
+            <package name="lesson14"/>
+        </packages>
+
     </test>
 
 </suite>

@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- The DOCTYPE declaration specifies the file as a TestNG XML configuration -->
+
+<suite name="Regression">
+    <!-- Defines the test suite with the name "Regression" -->
+
+    <!-- Parameters section: Defines key-value pairs that can be passed to tests -->
+    <parameter name="browser" value="chrome"/>
+    <!-- Sets the "browser" parameter to "chrome" -->
+
+    <parameter name="browser" value="opera"> </parameter>
+    <!-- Sets an additional "browser" parameter value to "opera" (multiple browsers can be handled in tests) -->
+
+    <parameter name="baseURLNetRD" value="https://netrd.orioninc.com.tr/"/>
+    <!-- Sets the "baseURLNetRD" parameter to the specified URL for NetRD -->
+
+    <parameter name="baseURLAmazon" value="https://www.amazon.com/"> </parameter>
+    <!-- Sets the "baseURLAmazon" parameter to the specified URL for Amazon -->
+
+    <parameter name="messaging" value="true"> </parameter>
+    <!-- Sets the "messaging" parameter to "true" to enable messaging functionality -->
+
+    <parameter name="numbers" value="sayilar"> </parameter>
+    <!-- Sets the "numbers" parameter to "sayilar" (the value represents a string for numbers) -->
+
+    <test name="ParameterTasks">
+        <!-- Defines a test named "ParameterTasks" within the suite -->
+
+        <classes>
+            <!-- Specifies the classes that contain the test methods to execute -->
+            <class name="lesson15.ParameterExamples"/>
+            <!-- Specifies the fully qualified name of the class containing the test methods -->
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- The DOCTYPE declaration specifies that this is a TestNG configuration file -->
+
+<suite name="Sanity" parallel="tests" thread-count="1">
+    <!-- The <suite> tag defines a test suite named "Sanity" -->
+    <!-- parallel="tests" indicates that tests will run in parallel -->
+    <!-- thread-count="2" specifies the maximum number of threads to use for parallel execution -->
+
+    <test name="Tests on Microsoft Edge browser">
+        <!-- The <test> tag defines a test named "Tests on Microsoft Edge browser" -->
+
+        <parameter name="browser" value="edge"/>
+        <!-- The <parameter> tag sets the value of the "browser" parameter to "edge" for this test -->
+
+        <classes>
+            <!-- The <classes> section specifies the test classes to execute -->
+            <class name="lesson15.ParallelTests"/>
+            <!-- The <class> tag identifies the fully qualified name of the test class to execute -->
+        </classes>
+    </test>
+
+    <test name="Tests on Google Chrome browser">
+        <!-- The <test> tag defines a test named "Tests on Google Chrome browser" -->
+
+        <parameter name="browser" value="chrome"/>
+        <!-- The <parameter> tag sets the value of the "browser" parameter to "chrome" for this test -->
+
+        <classes>
+            <!-- The <classes> section specifies the test classes to execute -->
+            <class name="lesson15.ParallelTests"></class>
+            <!-- The <class> tag identifies the fully qualified name of the test class to execute -->
+        </classes>
+    </test>
+</suite>
