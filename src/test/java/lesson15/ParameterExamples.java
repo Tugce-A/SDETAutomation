@@ -1,6 +1,7 @@
 package lesson15;
 
 // Importing necessary classes for TestNG functionalities
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -26,5 +27,11 @@ public class ParameterExamples {
 
         // Prints the value of the "numbers" parameter
         System.out.println(numbers);
+    }
+
+    @Test(description = "test description")
+    public void testName() {
+        Assert.assertTrue(true, "String message");
+        
     }
 }
