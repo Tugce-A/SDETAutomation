@@ -28,7 +28,7 @@ Feature: Login tests
         |standard_user  |secret_sauce     |
         |standard_user  |InvalidPassword   |
 
-  @test4 @p4
+  @test4 @p4 @p5
   Scenario: Verify that login is unsuccessful when invalid username and invalid password are used
     Given go to login page
     And type "InvalidUsername" username on login page

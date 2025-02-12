@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="52.364" tests="10" skipped="0" failures="3" errors="0">
+<testcase classname="Cucumber Report test" name="Cucumber Report asd" time="5.629">
+<system-out><![CDATA[
+Given the user navigates to the getir website...............................passed
+When the user closes the cookies pop-up.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login is successful when valid username and valid password are used" time="4.642">
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And type valid username on login page.......................................passed
+And type valid password on login page.......................................passed
+When click login button on login page.......................................passed
+Then Products header should visible on the inventory page...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login is unsuccessful when invalid username and valid password are used" time="5.459">
+<failure type="org.junit.ComparisonFailure" message="expected:&lt;...ssword do not match [wwwq]any user in this ser...&gt; but was:&lt;...ssword do not match []any user in this ser...&gt;">
+<![CDATA[org.junit.ComparisonFailure: expected:<...ssword do not match [wwwq]any user in this ser...> but was:<...ssword do not match []any user in this ser...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at lesson20.pages.LoginPage.errorMessageForInvalidCredentials(LoginPage.java:50)
+	at lesson20.stepDefinitions.LoginStepDefinitions.errorMessageIsDisplayedOnTheLoginPage(LoginStepDefinitions.java:55)
+	at ✽.error message is displayed on the login page(file:///C:/Users/barisa/IdeaProjects/SDETAutomation/src/test/java/lesson20/features/Login.feature:16)
+]]>
+</failure>
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And type invalid username on login page.....................................passed
+And type valid password on login page.......................................passed
+When click login button on login page.......................................passed
+Then error message is displayed on the login page...........................failed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login with different type of credentials - #1.1" time="5.24">
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And user types username as "standard_user"..................................passed
+And user types password as "secret_sauce"...................................passed
+When click login button on login page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login with different type of credentials - #1.2" time="5.003">
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And user types username as "InvalidUser"....................................passed
+And user types password as "secret_sauce"...................................passed
+When click login button on login page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login with different type of credentials - #1.3" time="5.041">
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And user types username as "standard_user"..................................passed
+And user types password as "secret_sauce"...................................passed
+When click login button on login page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login with different type of credentials - #1.4" time="4.983">
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And user types username as "standard_user"..................................passed
+And user types password as "InvalidPassword"................................passed
+When click login button on login page.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login is unsuccessful when invalid username and invalid password are used" time="5.798">
+<failure type="org.junit.ComparisonFailure" message="expected:&lt;...ssword do not match [wwwq]any user in this ser...&gt; but was:&lt;...ssword do not match []any user in this ser...&gt;">
+<![CDATA[org.junit.ComparisonFailure: expected:<...ssword do not match [wwwq]any user in this ser...> but was:<...ssword do not match []any user in this ser...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at lesson20.pages.LoginPage.errorMessageForInvalidCredentials(LoginPage.java:50)
+	at lesson20.stepDefinitions.LoginStepDefinitions.errorMessageIsDisplayedOnTheLoginPage(LoginStepDefinitions.java:55)
+	at ✽.error message is displayed on the login page(file:///C:/Users/barisa/IdeaProjects/SDETAutomation/src/test/java/lesson20/features/Login.feature:37)
+]]>
+</failure>
+<system-out><![CDATA[
+Given go to login page......................................................passed
+And type "InvalidUsername" username on login page...........................passed
+And type "InvalidPassword" password on login page...........................passed
+When click login button on login page.......................................passed
+Then error message is displayed on the login page...........................failed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login is successful when valid username and valid password are used" time="5.417">
+<system-out><![CDATA[
+Given initialize webdriver..................................................passed
+Given go to login page......................................................passed
+And type valid username on login page.......................................passed
+And type valid password on login page.......................................passed
+When click login button on login page.......................................passed
+Then Products header should visible on the inventory page...................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login tests" name="Verify that login is unsuccessful when invalid username and valid password are used" time="4.931">
+<failure type="org.junit.ComparisonFailure" message="expected:&lt;...ssword do not match [wwwq]any user in this ser...&gt; but was:&lt;...ssword do not match []any user in this ser...&gt;">
+<![CDATA[org.junit.ComparisonFailure: expected:<...ssword do not match [wwwq]any user in this ser...> but was:<...ssword do not match []any user in this ser...>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at lesson20.pages.LoginPage.errorMessageForInvalidCredentials(LoginPage.java:50)
+	at lesson20.stepDefinitions.LoginStepDefinitions.errorMessageIsDisplayedOnTheLoginPage(LoginStepDefinitions.java:55)
+	at ✽.error message is displayed on the login page(file:///C:/Users/barisa/IdeaProjects/SDETAutomation/src/test/java/lesson20/features/LoginWithBackground.feature:21)
+]]>
+</failure>
+<system-out><![CDATA[
+Given initialize webdriver..................................................passed
+Given go to login page......................................................passed
+And type invalid username on login page.....................................passed
+And type valid password on login page.......................................passed
+When click login button on login page.......................................passed
+Then error message is displayed on the login page...........................failed
+]]></system-out>
+</testcase>
+</testsuite>

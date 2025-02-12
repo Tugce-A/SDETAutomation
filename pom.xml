@@ -113,19 +113,96 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.20.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>5.8.5</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.8.4</version>
+        </dependency>
+        
 
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Plugin for executing integration tests in parallel using Maven Failsafe Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <!-- If a test scenario fails, Maven will continue executing the remaining tests instead of stopping. -->
+
+                    <skipTests>false</skipTests>
+                    <!-- Ensures that tests are not skipped during the build process. -->
+
+                    <includes>
+                        <include>**/lesson20/runner/*ParallelRunner*.java</include>
+                        <!-- Specifies the location of test runner files to include in the execution.
+                             This path should point to the correct runner classes. Verify this path
+                             to ensure that the desired test classes are included. -->
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin for executing unit tests in parallel using Maven Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version> <!-- Use the latest version -->
-            </plugin>
+                <version>3.1.2</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <!-- Specifies that test methods will be executed in parallel. Each test method will run concurrently,
+                         making the test execution faster. -->
+                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+                    <threadCount>2</threadCount>
+                    <!-- The number of threads to be used for parallel execution. In this case, two browsers or test methods
+                         will run concurrently. -->
 
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <!-- Disables the default behavior of assigning threads based on the number of CPU cores.
+                         Instead, the specified thread count (2) will be used. -->
+
+                    <forkCount>2</forkCount>
+                    <!-- Starts two separate processes, each capable of running a different test package.
+                         This can help speed up test execution but may increase resource consumption. -->
+
+                    <reuseForks>true</reuseForks>
+                    <!-- Reuses the processes created during previous test executions to reduce startup overhead
+                         and improve test execution performance. -->
+
+                    <argLine>-Duser.language=en</argLine>
+                    <!-- Sets the user language to English during the test execution, ensuring consistency across different environments. -->
+
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <!-- Sets the file encoding to UTF-8, preventing encoding issues during the test execution. -->
+
+                    <includes>
+                        <include>**/lesson20/runner/*ParallelRunner*.java</include>
+                        <!-- Specifies the location of test runner files to include in the execution.
+                             This path should point to the runner classes containing parallel test executions. -->
+                    </includes>
+
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <!-- Allows the build to continue even if some tests fail. All tests will be executed before the process ends. -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
 
 
 </project>
